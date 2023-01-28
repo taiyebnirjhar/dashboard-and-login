@@ -1,8 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import graphOne from "../../assets/graph-one.png";
+import graphThree from "../../assets/graph-three.png";
+
 import logo from "../../assets/logo.svg";
 import "./Login.css";
 
 function LoginPage() {
+  /****************************/
+  const [showPassword, setShowPassword] = useState(false);
   /****************************/
   useEffect(() => {
     document.title = "Funded Trading Plus: Login";
@@ -40,16 +45,16 @@ function LoginPage() {
             <form>
               {/*******************/}
               {/* email */}
-              <div class="relative  my-6 select-none">
+              <div className="relative  my-6 select-none">
                 <input
                   type="email"
-                  id="floating_outlined"
-                  class="block px-2.5 py-[20px] w-full text-[16px] font-[400px] leading-[21.86px] text-white bg-transparent focus:bg-[#070b13] border-[0.5px] border-gray-800 rounded focus:border-[#0AB062] focus:rounded-lg  appearance-none   focus:outline-none focus:ring-0  peer"
+                  id="floating_email"
+                  className="block px-2.5 py-[20px] w-full text-[16px] font-[400px] leading-[21.86px] text-white bg-transparent focus:bg-[#070b13] border-[0.5px] border-gray-800 rounded focus:border-[#0AB062] focus:rounded-lg  appearance-none   focus:outline-none focus:ring-0  peer"
                   placeholder=" "
                 />
                 <label
-                  for="floating_outlined"
-                  class="absolute text-[16px] text-white dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0]  dark:bg-gray-900 px-4 peer-focus:px-4 peer-focus:text-[#7B879E] peer-focus:bg-[#10111a] peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-[50%] peer-focus:top-1 bg-[#10111a] peer-focus:scale-75 peer-focus:-translate-y-4 left-1"
+                  htmlFor="floating_email"
+                  className="absolute text-[16px] text-white dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0]  dark:bg-gray-900 px-4 py-0 peer-focus:px-4 peer-focus:text-[#7B879E] peer-focus:bg-[#10111a] peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-[50%] peer-focus:top-1 bg-[#10111a] peer-focus:scale-75 peer-focus:-translate-y-4 left-1"
                 >
                   Email
                 </label>
@@ -58,22 +63,41 @@ function LoginPage() {
 
               {/*******************/}
               {/* password */}
-              <div class="relative border-[0.5px] border-gray-800 rounded focus:border-[#0AB062] focus:rounded-lg my-6 select-none">
+              <div className="relative border-[0.5px] border-gray-800 rounded focus:border-[#0AB062] focus:rounded-lg my-6 select-none">
                 <input
-                  type="password"
-                  id="floating_outlined"
-                  class="block px-2.5 py-[20px] w-full text-[16px] font-[400px] leading-[21.86px] text-white bg-transparent focus:bg-[#070b13] border-[0.5px] border-gray-800 rounded focus:border-[#0AB062] focus:rounded-lg  appearance-none   focus:outline-none focus:ring-0  peer"
+                  type={!showPassword ? "password" : "text"}
+                  id="floating_password"
+                  className="block px-2.5 py-[20px] w-full text-[16px] font-[400px] leading-[21.86px] text-white bg-transparent focus:bg-[#070b13] border-[0.5px] border-gray-800 rounded focus:border-[#0AB062] focus:rounded-lg  appearance-none   focus:outline-none focus:ring-0  peer"
                   placeholder=" "
                 />
                 <label
-                  for="floating_outlined"
-                  class="absolute text-[16px] text-white dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0]  dark:bg-gray-900 px-4 peer-focus:px-4 peer-focus:text-[#7B879E] peer-focus:bg-[#10111a] peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-[50%] peer-focus:top-1 bg-[#10111a] peer-focus:scale-75 peer-focus:-translate-y-4 left-1"
+                  htmlFor="floating_password"
+                  className="absolute text-[16px] text-white dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0]  dark:bg-gray-900 px-4 peer-focus:px-4 peer-focus:text-[#7B879E] peer-focus:bg-[#10111a] peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-[50%] peer-focus:top-1 bg-[#10111a] peer-focus:scale-75 peer-focus:-translate-y-4 left-1"
                 >
                   Password
                 </label>
               </div>
               {/*******************/}
+              <div className="mb-12">
+                <div className="flex items-center">
+                  <input
+                    onClick={() => {
+                      setShowPassword((prev) => !prev);
+                    }}
+                    id="link-checkbox"
+                    type="checkbox"
+                    value=""
+                    className="w-4 h-4 accent-[#0AB062] bg-gray-100 rounded border-gray-300  "
+                  />
 
+                  <label
+                    htmlFor="link-checkbox"
+                    className="ml-2 text-[16px] font-medium text-slate-100  select-none"
+                  >
+                    Show Password
+                  </label>
+                </div>
+              </div>
               {/*******************/}
               {/* Button */}
               <div className="w-full text-white font-semibold bg-[#0AB062] px-2.5 py-[20px] text-center rounded my-4 select-none  duration-300 hover:rounded-lg">
@@ -87,18 +111,26 @@ function LoginPage() {
           </div>
         </div>
       </div>
-      <div className=" lg:w-6/12 flex items-center  backgroundSecondary">
-        <div class="">
-          <div class="text-white px-4 py-6 md:p-12 md:mx-6">
-            <h4 class="text-xl font-semibold mb-6">
+      <div className=" lg:w-6/12 flex items-center justify-center  backgroundSecondary">
+        <div className="">
+          <div className="text-white px-4 py-6 md:p-12 md:mx-6">
+            <div className="relative">
+              <img src={graphOne} alt="" />
+              {/* <img src={graphTwo} alt="" /> */}
+              <div className="overlay">
+                <img src={graphThree} alt="" className="overlay-image" />
+              </div>
+            </div>
+
+            {/* <h4 className="text-xl font-semibold mb-6">
               We are more than just a company
             </h4>
-            <p class="text-sm">
+            <p className="text-sm">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
               nisi ut aliquip ex ea commodo consequat.
-            </p>
+            </p> */}
           </div>
         </div>
       </div>
