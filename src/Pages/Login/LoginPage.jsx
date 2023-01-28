@@ -100,9 +100,9 @@ function LoginPage() {
               </div>
               {/*******************/}
               {/* Button */}
-              <div className="w-full text-white font-semibold bg-[#0AB062] px-2.5 py-[20px] text-center rounded my-4 select-none  duration-300 hover:rounded-lg">
+              <button className="w-full text-white font-semibold bg-[#0AB062] px-2.5 py-[20px] text-center rounded mt-3 mb-2 select-none  duration-300 hover:rounded-lg">
                 LOGIN
-              </div>
+              </button>
               {/*******************/}
             </form>
           </div>
