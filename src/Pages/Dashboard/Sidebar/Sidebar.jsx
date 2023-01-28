@@ -6,7 +6,7 @@ function Sidebar() {
 
   return (
     <>
-      <nav className="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl flex flex-wrap items-center justify-between relative md:w-64 z-10 py-4 px-6  backgroundForth">
+      <nav className="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl flex flex-wrap items-center justify-between relative md:w-64 z-10 py-4 px-4  backgroundForth">
         <div className="md:flex-col md:items-stretch md:min-h-[100%] md:flex-nowrap px-6 flex flex-wrap items-center justify-between w-full mx-auto backgroundThird rounded-md text-white ">
           {/***********************/}
           {/* Toggler */}
@@ -30,13 +30,17 @@ function Sidebar() {
               <div className="text-[26px] font-[600] leading-[31px] tracking-[0.1rem] text-[#0AB062] tommorow">
                 16:23:06
               </div>
-              <div>Drawdown Reset: 02:40:00</div>
+              <div className="text-[#7B879E] font-[400] text-[14px] leading-[19px] ">
+                Drawdown Reset: 02:40:00
+              </div>
             </div>
           </div>
+          {/********/}
+          {/* Divider */}
+          <hr className=" md:min-w-full  border-[#7B879E] opacity-40" />
           {/***********************/}
-          {/* User */}
+
           {/***********************/}
-          {/* Collapse */}
           <div
             className={
               "md:flex md:flex-col md:items-stretch md:opacity-100 md:relative md:mt-4 md:shadow-none shadow absolute top-0 left-0 right-0 z-40 overflow-y-auto overflow-x-hidden h-auto items-center flex-1 rounded " +
@@ -68,7 +72,7 @@ function Sidebar() {
             </div>
             {/********/}
             {/* Divider */}
-            <hr className="my-4 md:min-w-full" />
+
             {/********/}
 
             {/********/}
