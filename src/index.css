@@ -27,3 +27,11 @@
 .backgroundForth {
   background-color: #1e1e1e;
 }
+
+.background_green_hover {
+  background: rgba(17, 244, 138, 0.05);
+}
+
+.background_green {
+  background: #0ab062;
+}
