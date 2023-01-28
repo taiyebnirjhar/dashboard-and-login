@@ -14,7 +14,7 @@ function Main() {
   return (
     <>
       <Sidebar />
-      <div className="relative md:ml-64 ">
+      <div className="relative md:ml-64 border border-red-600">
         <AdminNavbar />
         <div className="px-4 md:px-10 mx-auto w-full -m-24">
           <Outlet />

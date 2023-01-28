@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import Raf from "../Components/Raf/Raf";
+import Dash from "../Pages/Dashboard/Dash/Dash";
 import Main from "../Pages/Dashboard/Main/Main";
 import LoginPage from "../Pages/Login/LoginPage";
 import Root from "./Root";
@@ -15,7 +15,7 @@ const router = createBrowserRouter([
         children: [
           {
             path: "/dashboard",
-            element: <div>hello</div>,
+            element: <Dash />,
           },
         ],
       },
@@ -26,10 +26,6 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <LoginPage />,
-      },
-      {
-        path: "/raf",
-        element: <Raf />,
       },
     ],
   },

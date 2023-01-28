@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import logo from "../../../assets/logo.svg";
 
 function Sidebar() {
   const [collapseShow, setCollapseShow] = useState("hidden");
 
   return (
     <>
-      <nav className="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl bg-white flex flex-wrap items-center justify-between relative md:w-64 z-10 py-4 px-6">
-        <div className="md:flex-col md:items-stretch md:min-h-full md:flex-nowrap px-0 flex flex-wrap items-center justify-between w-full mx-auto">
+      <nav className="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl flex flex-wrap items-center justify-between relative md:w-64 z-10 py-4 px-6  backgroundForth">
+        <div className="md:flex-col md:items-stretch md:min-h-[100%] md:flex-nowrap px-6 flex flex-wrap items-center justify-between w-full mx-auto backgroundThird rounded-md text-white ">
           {/***********************/}
           {/* Toggler */}
           <button
@@ -18,13 +18,21 @@ function Sidebar() {
             <i className="fas fa-bars"></i>
           </button>
           {/***********************/}
-          {/* Brand */}
-          <Link
-            className="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
-            to="/"
-          >
-            tradeify
-          </Link>
+
+          <div className="md:block text-left md:pb-2  mr-0 inline-block whitespace-nowrap text-sm  font-bold p-4 px-0">
+            <div className="flex flex-col flex-nowrap items-center gap-1">
+              <div className="max-w-[32px] max-h-[35px] mt-3">
+                <img src={logo} />
+              </div>
+              <div className="text-[14px] leading-[19px] text-[#7B879E] font-[500]">
+                Friday, Jan. 24
+              </div>
+              <div className="text-[26px] font-[600] leading-[31px] tracking-[0.1rem] text-[#0AB062] tommorow">
+                16:23:06
+              </div>
+              <div>Drawdown Reset: 02:40:00</div>
+            </div>
+          </div>
           {/***********************/}
           {/* User */}
           {/***********************/}
@@ -37,15 +45,15 @@ function Sidebar() {
           >
             {/********/}
             {/* Collapse header */}
-            <div className="md:min-w-full md:hidden block pb-4 mb-4 border-b border-solid border-blueGray-200">
+            <div className="md:min-w-full md:hidden block pb-4 mb-4 border-b border-solid border-blueGray-200 text-white">
               <div className="flex flex-wrap">
                 <div className="w-6/12">
-                  <Link
-                    className="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
-                    to="/"
+                  <div
+                    className="md:block text-left md:pb-2  mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
+                    // to="/"
                   >
-                    tradeify
-                  </Link>
+                    Dashboard
+                  </div>
                 </div>
                 <div className="w-6/12 flex justify-end">
                   <button
@@ -62,110 +70,115 @@ function Sidebar() {
             {/* Divider */}
             <hr className="my-4 md:min-w-full" />
             {/********/}
-            {/* Heading */}
-            <h6 className="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline">
-              Admin
-            </h6>
+
             {/********/}
             {/* Navigation */}
-            {/* <ul className="md:flex-col md:min-w-full flex flex-col list-none">
+            <ul className="md:flex-col md:min-w-full flex flex-col list-none">
               <li className="items-center">
-                <Link
+                <div
                   className={
-                    "text-xs uppercase py-3 font-bold block " +
-                    (window.location.href.indexOf("/") !== -1
-                      ? "text-lightBlue-500 hover:text-lightBlue-600"
-                      : "text-blueGray-700 hover:text-blueGray-500")
+                    "text-xs uppercase py-3 font-bold block "
+                    // +
+                    // (window.location.href.indexOf("/dashboard") !== -1
+                    //   ? "text-lightBlue-500 hover:text-lightBlue-600"
+                    //   : "text-blueGray-700 hover:text-blueGray-500")
                   }
-                  to="/"
+                  // to=""
                 >
                   <i
                     className={
-                      "fas fa-tv mr-2 text-sm " +
-                      (window.location.href.indexOf("/") !== -1
-                        ? "opacity-75"
-                        : "text-blueGray-300")
+                      "fas fa-tv mr-2 text-sm "
+                      // +
+                      // (window.location.href.indexOf("/dashboard") !== -1
+                      //   ? "opacity-75"
+                      //   : "text-blueGray-300")
                     }
                   ></i>{" "}
                   Dashboard
-                </Link>
+                </div>
               </li>
 
               <li className="items-center">
-                <Link
+                <div
                   className={
-                    "text-xs uppercase py-3 font-bold block " +
-                    (window.location.href.indexOf("/") !== -1
-                      ? "text-lightBlue-500 hover:text-lightBlue-600"
-                      : "text-blueGray-700 hover:text-blueGray-500")
+                    "text-xs uppercase py-3 font-bold block "
+                    // +
+                    // (window.location.href.indexOf("/products") !== -1
+                    //   ? "text-lightBlue-500 hover:text-lightBlue-600"
+                    //   : "text-blueGray-700 hover:text-blueGray-500")
                   }
-                  to="/"
+                  // to=""
                 >
                   <i
                     className={
-                      "fa-brands fa-dropbox mr-2 text-sm " +
-                      (window.location.href.indexOf("/") !== -1
-                        ? "opacity-75"
-                        : "text-blueGray-300")
+                      "fa-brands fa-dropbox mr-2 text-sm "
+                      // +
+                      // (window.location.href.indexOf("/products") !== -1
+                      //   ? "opacity-75"
+                      //   : "text-blueGray-300")
                     }
                   ></i>{" "}
                   Products
-                </Link>
+                </div>
               </li>
 
               <li className="items-center">
-                <Link
+                <div
                   className={
-                    "text-xs uppercase py-3 font-bold block " +
-                    (window.location.href.indexOf("/") !== -1
-                      ? "text-lightBlue-500 hover:text-lightBlue-600"
-                      : "text-blueGray-700 hover:text-blueGray-500")
+                    "text-xs uppercase py-3 font-bold block "
+                    // +
+                    // (window.location.href.indexOf("/customer") !== -1
+                    //   ? "text-lightBlue-500 hover:text-lightBlue-600"
+                    //   : "text-blueGray-700 hover:text-blueGray-500")
                   }
-                  to="/"
+                  // to=""
                 >
                   <i
                     className={
-                      "fa-solid fa-user mr-2 text-sm " +
-                      (window.location.href.indexOf("/") !== -1
-                        ? "opacity-75"
-                        : "text-blueGray-300")
+                      "fa-solid fa-user mr-2 text-sm "
+                      // +
+                      // (window.location.href.indexOf("/customer") !== -1
+                      //   ? "opacity-75"
+                      //   : "text-blueGray-300")
                     }
                   ></i>{" "}
                   Customers
-                </Link>
+                </div>
               </li>
 
               <li className="items-center">
-                <Link
+                <div
                   className={
-                    "text-xs uppercase py-3 font-bold block " +
-                    (window.location.href.indexOf("/") !== -1
-                      ? "text-lightBlue-500 hover:text-lightBlue-600"
-                      : "text-blueGray-700 hover:text-blueGray-500")
+                    "text-xs uppercase py-3 font-bold block "
+                    // +
+                    // (window.location.href.indexOf("orders") !== -1
+                    //   ? "text-lightBlue-500 hover:text-lightBlue-600"
+                    //   : "text-blueGray-700 hover:text-blueGray-500")
                   }
-                  to="/"
+                  // to=""
                 >
                   <i
                     className={
-                      "fa-regular fa-hourglass-half mr-2 text-sm " +
-                      (window.location.href.indexOf("/") !== -1
-                        ? "opacity-75"
-                        : "text-blueGray-300")
+                      "fa-regular fa-hourglass-half mr-2 text-sm "
+                      // +
+                      // (window.location.href.indexOf("/orders") !== -1
+                      //   ? "opacity-75"
+                      //   : "text-blueGray-300")
                     }
                   ></i>{" "}
                   Orders
-                </Link>
+                </div>
               </li>
 
               <li className="items-center">
-                <Link className={"text-xs uppercase py-3 font-bold block "}>
+                <div className={"text-xs uppercase py-3 font-bold block "}>
                   <i
                     className={"fa-solid fa-right-from-bracket mr-2 text-sm "}
                   ></i>{" "}
                   logout
-                </Link>
+                </div>
               </li>
-            </ul> */}
+            </ul>
             {/********/}
             {/* Divider */}
             <hr className="my-4 md:min-w-full" />
